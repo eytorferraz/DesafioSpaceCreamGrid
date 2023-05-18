@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+footer {
+  display: none;
+}
+
+.desktop-text {
+  display: none;
+}
+
+#logo-mobile {
+  padding: 3.2rem 0;
+}
+
+header {
+  background-color: hsl(218, 17%, 62%);
+  display: grid;
+  place-items: center;
+}
+
+#logo {
+  padding: 3.2rem 0;
+  max-width: 214px;
+  max-height: 167px;
+}
+
+h1 {
+  color: #fff;
+  background-color: hsl(275, 18%, 79%);
+
+  font-size: 4rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+h1,span {
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 0.5rem;
+  line-height: 3.4rem;
+}
+
+body {
+  background-color: hsl(233, 100%, 97%);
+  font-family: "Palanquin", sans-serif;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.8rem 3.2rem 6rem;
+}
+
+.title {
+  background: #cbc0d3;
+  margin-bottom: 2.9rem;
+  padding: 0.8rem;
+  width: 100%;
+  text-align: center;
+}
+
+.text {
+  font-family: 'Palanquin', sans-serif;
+  padding: 0 3.2rem;
+  color: hsl(274, 84%, 12%);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  gap: 3.2rem;
+  margin-top: 5rem;
+}
+
+.cards .card {
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.cards .card span {
+  font-size: 2rem;
+  color: #4a4e69;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: #feeafa;
+  border-radius: 2rem;
+  width: 11.2rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  z-index: 10;
+}
+
+.cards .card img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.card img {
+  transition: all 500ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  border-radius: 2rem;
+}
+
+.card {
+  animation: downtop 500ms 250ms backwards;
+}
+
+.card span {
+  animation: topdown 1000ms 400ms backwards;
+}
+
+@keyframes topdown {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes SlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+  }
+
+  header {
+    width: 37.7rem;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    animation: SlideIn 700ms 350ms backwards;
+  }
+
+  .title {
+    margin-bottom: 3.2rem;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .desktop-text {
+    display: block;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    width: 28rem;
+    text-align: center;
+  }
+
+  .cards {
+    margin-left: 37.7rem;
+    grid-template-areas:
+      "A B"
+      "C B"
+      "C D"
+      "E F";
+  }
+  .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards .card:nth-child(3) {
+    grid-area: D;
+  }
+
+  .cards .card:nth-child(4) {
+    grid-area: C;
+  }
+
+  .cards .card:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards .card:nth-child(6) {
+    grid-area: F;
+  }
+
+  footer {
+    padding-top: 5rem;
+    margin-left: 37.7rem;
+    display: block;
+  }
+
+  footer p {
+    font-size: 1.4rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #4a4e69;
+    line-height: 28px;
+  }
+
+  footer p a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #4a4e69;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cards {
+    grid-template-areas:
+      "A B C"
+      "D B E"
+      "D F E";
+  }
+
+  .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards .card:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards .card:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards .card:nth-child(5) {
+    grid-area: F;
+  }
+
+  .cards .card:nth-child(6) {
+    grid-area: E;
+  }
+}
